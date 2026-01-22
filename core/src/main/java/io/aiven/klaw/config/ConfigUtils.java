@@ -8,14 +8,17 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
 import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
+
+
 
 /*
 - Provide static resources to be loaded, required by the application
 - Apply HttpSecurity configs
  */
 public class ConfigUtils {
-  protected static AntPathRequestMatcher[] getStaticResources(boolean coralEnabled) {
+  protected static PathPatternRequestMatcher[] getStaticResources(boolean coralEnabled) {
+
 
     List<String> staticResourcesHtmlArray =
         new ArrayList<>(
@@ -49,15 +52,16 @@ public class ConfigUtils {
       staticResourcesHtmlArray.add("/assets/coral/**");
     }
 
-    AntPathRequestMatcher[] antPathRequestMatchersArray =
-        new AntPathRequestMatcher[staticResourcesHtmlArray.size()];
+    PathPatternRequestMatcher[] pathPatternRequestMatchersArray =
+        new PathPatternRequestMatcher[staticResourcesHtmlArray.size()];
     int i = 0;
     for (String s : staticResourcesHtmlArray) {
-      antPathRequestMatchersArray[i] = new AntPathRequestMatcher(s);
+      pathPatternRequestMatchersArray[i] = PathPatternRequestMatcher.withDefaults().matcher(s);
       i++;
     }
 
-    return antPathRequestMatchersArray;
+    return pathPatternRequestMatchersArray;
+
   }
 
   protected static void applyHttpSecurityConfig(

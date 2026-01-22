@@ -1,6 +1,7 @@
 package io.aiven.klaw.model.enums;
 
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.springframework.lang.Nullable;
+
 
 public enum SchemaType {
   AVRO("AVRO"),

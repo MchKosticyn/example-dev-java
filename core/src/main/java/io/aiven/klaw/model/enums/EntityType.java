@@ -1,7 +1,8 @@
 package io.aiven.klaw.model.enums;
 
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.springframework.lang.Nullable;
+
 
 @Slf4j
 public enum EntityType {

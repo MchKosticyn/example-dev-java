@@ -6,12 +6,13 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.security.Key;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
 import javax.crypto.spec.SecretKeySpec;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.InitializingBean;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -79,7 +80,8 @@ public class JwtTokenUtilService implements InitializingBean {
   public void afterPropertiesSet() throws Exception {
     if (app2AppSecret != null && !app2AppSecret.trim().isEmpty()) {
       try {
-        decodedSecret = Base64.decodeBase64(app2AppSecret);
+        decodedSecret = Base64.getDecoder().decode(app2AppSecret);
+
         return;
       } catch (Exception e) {
         throw new Exception("Invalid Base64 value configured. klaw.core.app2app.base64.secret");

@@ -4,18 +4,19 @@ import io.aiven.klaw.model.CaptchaResponse;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+
 @Service
 @Slf4j
 public class ValidateCaptchaService {
 
-  private final RestTemplate template;
+  private final RestTemplate template = new RestTemplate();
+
 
   @Value("${google.recaptcha.verification.endpoint}")
   String recaptchaEndpoint;
@@ -26,9 +27,7 @@ public class ValidateCaptchaService {
   @Value("${google.recaptcha.secret}")
   String recaptchaSecret;
 
-  public ValidateCaptchaService(final RestTemplateBuilder templateBuilder) {
-    this.template = templateBuilder.build();
-  }
+
 
   // method validate the captcha response coming from the client
   // and return either true or false after the validation.
