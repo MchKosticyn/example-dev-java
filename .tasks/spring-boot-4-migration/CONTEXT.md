@@ -10,8 +10,9 @@ Migration of the project to Spring Boot 4 following the official migration guide
 
 - [x] task-01-assess-current-state.md: Assess Current State
 - [x] task-02-update-build-config.md: Update Build Configuration
-- [ ] task-03-migrate-code.md: Migrate Code to Spring Boot 4
+- [x] task-03-migrate-code.md: Migrate Code to Spring Boot 4
 - [ ] task-04-verify-build-and-tests.md: Verify Build and Tests
+
 
 ### task-01 summary
 - Root parent uses Spring Boot 3.3.4 in `pom.xml`; modules are `core` and `cluster-api`.
@@ -23,10 +24,13 @@ Migration of the project to Spring Boot 4 following the official migration guide
 - Removed module-specific snakeyaml and spring-kafka-test version overrides to rely on Boot 4 dependency management.
 - Task list reviewed; no changes needed.
 
-
-
+### task-03 summary
+- Migrated cluster-api JWT filter to jakarta.servlet imports.
+- Added explicit shutdown logging + System.exit handling for missing DB users in no-SSO security config.
+- Task list reviewed; no changes needed.
 
 ---
+
 
 ## Shared Knowledge
 

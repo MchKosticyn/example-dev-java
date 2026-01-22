@@ -75,10 +75,15 @@ public class SecurityConfigNoSSO {
   @Autowired LdapTemplate ldapTemplate;
 
   public static final String BCRYPT_ENCODING_ID = "{bcrypt}";
+  private static final int SHUTDOWN_EXIT_CODE = 1;
+  private static final String SHUTDOWN_LOG_MESSAGE =
+      "Shutting down application because required security configuration is missing.";
 
   private void shutdownApp() {
-    // TODO
+    log.error(SHUTDOWN_LOG_MESSAGE);
+    System.exit(SHUTDOWN_EXIT_CODE);
   }
+
 
   @Bean
   public SecurityFilterChain securityFilterChain(
