@@ -34,8 +34,8 @@
         <npm.version>8.19.2</npm.version>
         <pnpm.version>8.7.1</pnpm.version>
         <shedlock.version>6.3.0</shedlock.version>
-        <snakeyaml.version>1.33</snakeyaml.version>
         <springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
+
         <springdoc-openapi-ui.version>2.6.0</springdoc-openapi-ui.version>
         <!-- If the Integration Tests are timing out because the server is slow increase the number below. 120 attempts is equal to 60s each attempt gets a 500ms backoff -->
         <spring.integration.test.timeout>120</spring.integration.test.timeout>
@@ -70,8 +70,9 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+            <artifactId>spring-boot-starter-security-oauth2-client</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
@@ -138,9 +139,10 @@
             <artifactId>caffeine</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-liquibase</artifactId>
         </dependency>
+
         <dependency>
             <groupId>net.javacrumbs.shedlock</groupId>
             <artifactId>shedlock-spring</artifactId>
@@ -162,10 +164,11 @@
             <version>${springdoc-openapi-ui.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
