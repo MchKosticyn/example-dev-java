@@ -160,7 +160,7 @@ app.controller("requestConsumerOffsetResetCtrl", function($scope, $http, $locati
         $scope.httpCreateTopicReq = function(serviceInput){
             $http({
                     method: "POST",
-                    url: "/operationalRequest/consumerOffsetsReset/create",
+                    url: "/opReq/consumerOffsetsReset/create",
                     headers : { 'Content-Type' : 'application/json' },
                     data: serviceInput
                 }).success(function(output) {

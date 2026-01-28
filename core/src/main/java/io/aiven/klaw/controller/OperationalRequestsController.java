@@ -36,7 +36,7 @@ public class OperationalRequestsController {
 
   @PermissionAllowed(permissionAllowed = {PermissionType.REQUEST_CREATE_OPERATIONAL_CHANGES})
   @PostMapping(
-      value = "/operationalRequest/consumerOffsetsReset/create",
+      value = "/opReq/consumerOffsetsReset/create",
       produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<ApiResponse> createConsumerOffsetsResetRequest(
       @Valid @RequestBody ConsumerOffsetResetRequestModel consumerOffsetResetRequestModel)
@@ -49,7 +49,7 @@ public class OperationalRequestsController {
 
   @PermissionAllowed(permissionAllowed = {PermissionType.APPROVE_OPERATIONAL_CHANGES})
   @PostMapping(
-      value = "/operationalRequest/reqId/{reqId}/approve",
+      value = "/opReq/reqId/{reqId}/approve",
       produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<ApiResponse> approveOperationalRequest(
       @PathVariable("reqId") String reqId) {
@@ -59,7 +59,7 @@ public class OperationalRequestsController {
 
   @PermissionAllowed(permissionAllowed = {PermissionType.APPROVE_OPERATIONAL_CHANGES})
   @PostMapping(
-      value = "/operationalRequest/reqId/{reqId}/decline",
+      value = "/opReq/reqId/{reqId}/decline",
       produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<ApiResponse> declineOperationalRequest(
       @PathVariable("reqId") String reqId,
@@ -72,7 +72,7 @@ public class OperationalRequestsController {
 
   @PermissionAllowed(permissionAllowed = {PermissionType.REQUEST_CREATE_OPERATIONAL_CHANGES})
   @PostMapping(
-      value = "/operationalRequest/reqId/{reqId}/delete",
+      value = "/opReq/reqId/{reqId}/delete",
       produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<ApiResponse> deleteOperationalRequest(
       @PathVariable(value = "reqId") String operationalRequestId) throws KlawException {
@@ -82,7 +82,7 @@ public class OperationalRequestsController {
 
   @PermissionAllowed(permissionAllowed = {PermissionType.REQUEST_CREATE_OPERATIONAL_CHANGES})
   @RequestMapping(
-      value = "/operationalRequest/consumerOffsetsReset/validate",
+      value = "/opReq/consumerOffsetsReset/validate",
       method = RequestMethod.GET,
       produces = {MediaType.APPLICATION_JSON_VALUE})
   public ResponseEntity<EnvIdInfo> validateOffsetRequestDetails(

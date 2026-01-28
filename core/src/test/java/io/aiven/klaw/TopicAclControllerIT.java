@@ -1635,7 +1635,7 @@ public class TopicAclControllerIT {
   public void deleteOffsetRequest() throws Exception {
     String response =
         mvc.perform(
-                MockMvcRequestBuilders.post("/operationalRequest/reqId/" + 1001 + "/delete")
+                MockMvcRequestBuilders.post("/opReq/reqId/" + 1001 + "/delete")
                     .with(user(user1).password(PASSWORD).roles("USER"))
                     .with(csrf())
                     .contentType(MediaType.APPLICATION_JSON)
@@ -1667,7 +1667,7 @@ public class TopicAclControllerIT {
   public void declineOffsetRequest() throws Exception {
     String response =
         mvc.perform(
-                MockMvcRequestBuilders.post("/operationalRequest/reqId/" + 1002 + "/decline")
+                MockMvcRequestBuilders.post("/opReq/reqId/" + 1002 + "/decline")
                     .with(user(user2).password(PASSWORD).roles("USER"))
                     .with(csrf())
                     .param("reasonForDecline", "not required")
@@ -1707,7 +1707,7 @@ public class TopicAclControllerIT {
         .thenReturn(apiResponse);
     String response =
         mvc.perform(
-                MockMvcRequestBuilders.post("/operationalRequest/reqId/" + 1003 + "/approve")
+                MockMvcRequestBuilders.post("/opReq/reqId/" + 1003 + "/approve")
                     .with(user(user2).password(PASSWORD).roles("USER"))
                     .with(csrf())
                     .contentType(MediaType.APPLICATION_JSON)
@@ -1860,7 +1860,7 @@ public class TopicAclControllerIT {
     String jsonReq = OBJECT_MAPPER.writer().writeValueAsString(consumerOffsetResetRequestModel);
 
     return mvc.perform(
-            MockMvcRequestBuilders.post("/operationalRequest/consumerOffsetsReset/create")
+            MockMvcRequestBuilders.post("/opReq/consumerOffsetsReset/create")
                 .with(user(user1).password(PASSWORD).roles("USER"))
                 .with(csrf())
                 .content(jsonReq)

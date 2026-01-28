@@ -1047,7 +1047,7 @@
         }
       }
     },
-    "/operationalRequest/reqId/{reqId}/delete" : {
+    "/opReq/reqId/{reqId}/delete" : {
       "post" : {
         "tags" : [ "operational-requests-controller" ],
         "operationId" : "deleteOperationalRequest",
@@ -1073,7 +1073,7 @@
         }
       }
     },
-    "/operationalRequest/reqId/{reqId}/decline" : {
+    "/opReq/reqId/{reqId}/decline" : {
       "post" : {
         "tags" : [ "operational-requests-controller" ],
         "operationId" : "declineOperationalRequest",
@@ -1106,7 +1106,7 @@
         }
       }
     },
-    "/operationalRequest/reqId/{reqId}/approve" : {
+    "/opReq/reqId/{reqId}/approve" : {
       "post" : {
         "tags" : [ "operational-requests-controller" ],
         "operationId" : "approveOperationalRequest",
@@ -1132,7 +1132,7 @@
         }
       }
     },
-    "/operationalRequest/consumerOffsetsReset/create" : {
+    "/opReq/consumerOffsetsReset/create" : {
       "post" : {
         "tags" : [ "operational-requests-controller" ],
         "operationId" : "createConsumerOffsetsResetRequest",
@@ -2614,7 +2614,7 @@
         }
       }
     },
-    "/operationalRequest/consumerOffsetsReset/validate" : {
+    "/opReq/consumerOffsetsReset/validate" : {
       "get" : {
         "tags" : [ "operational-requests-controller" ],
         "operationId" : "validateOffsetRequestDetails",

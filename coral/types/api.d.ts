@@ -480,7 +480,7 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/operationalRequest/reqId/{reqId}/delete": {
+    "/opReq/reqId/{reqId}/delete": {
         parameters: {
             query?: never;
             header?: never;
@@ -496,7 +496,7 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/operationalRequest/reqId/{reqId}/decline": {
+    "/opReq/reqId/{reqId}/decline": {
         parameters: {
             query?: never;
             header?: never;
@@ -512,7 +512,7 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/operationalRequest/reqId/{reqId}/approve": {
+    "/opReq/reqId/{reqId}/approve": {
         parameters: {
             query?: never;
             header?: never;
@@ -528,7 +528,7 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/operationalRequest/consumerOffsetsReset/create": {
+    "/opReq/consumerOffsetsReset/create": {
         parameters: {
             query?: never;
             header?: never;
@@ -1329,7 +1329,7 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/operationalRequest/consumerOffsetsReset/validate": {
+    "/opReq/consumerOffsetsReset/validate": {
         parameters: {
             query?: never;
             header?: never;
@@ -7996,10 +7996,10 @@ export enum ApiPaths {
     approveRequest = "/request/approve",
     registerUser = "/registerUser",
     promoteSchema = "/promote/schema",
-    deleteOperationalRequest = "/operationalRequest/reqId/:reqId/delete",
-    declineOperationalRequest = "/operationalRequest/reqId/:reqId/decline",
-    approveOperationalRequest = "/operationalRequest/reqId/:reqId/approve",
-    createConsumerOffsetsResetRequest = "/operationalRequest/consumerOffsetsReset/create",
+    deleteOperationalRequest = "/opReq/reqId/:reqId/delete",
+    declineOperationalRequest = "/opReq/reqId/:reqId/decline",
+    approveOperationalRequest = "/opReq/reqId/:reqId/approve",
+    createConsumerOffsetsResetRequest = "/opReq/consumerOffsetsReset/create",
     logout = "/logout",
     approveTopicRequests = "/execTopicRequests",
     declineTopicRequests = "/execTopicRequestsDecline",
@@ -8049,7 +8049,7 @@ export enum ApiPaths {
     resetCache = "/resetCache",
     getRequestStatistics = "/requests/statistics",
     getOperationalRequests = "/operationalRequests/requestsFor/:requestsFor",
-    validateOffsetRequestDetails = "/operationalRequest/consumerOffsetsReset/validate",
+    validateOffsetRequestDetails = "/opReq/consumerOffsetsReset/validate",
     getRegistrationInfoFromId = "/getUserInfoFromRegistrationId",
     getUserDetails = "/getUserDetails",
     getUpdateEnvStatus = "/getUpdateEnvStatus",

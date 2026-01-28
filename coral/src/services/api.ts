@@ -37,14 +37,14 @@ const API_BASE_URL = getHTTPBaseAPIUrl();
 const API_PATHS = {
   getSchemaRequest: "/schema/request/{schemaReqId}",
   getAclRequest: "/acl/request/{aclRequestId}",
-  approveOperationalRequest: "/operationalRequest/reqId/{reqId}/approve",
-  declineOperationalRequest: "/operationalRequest/reqId/{reqId}/decline",
-  deleteOperationalRequest: "/operationalRequest/reqId/{reqId}/delete",
+  approveOperationalRequest: "/opReq/reqId/{reqId}/approve",
+  declineOperationalRequest: "/opReq/reqId/{reqId}/decline",
+  deleteOperationalRequest: "/opReq/reqId/{reqId}/delete",
   getOperationalRequests: "/operationalRequests/requestsFor/{requestsFor}",
   validateOffsetRequestDetails:
-    "/operationalRequest/consumerOffsetsReset/validate",
+    "/opReq/consumerOffsetsReset/validate",
   createConsumerOffsetsResetRequest:
-    "/operationalRequest/consumerOffsetsReset/create",
+    "/opReq/consumerOffsetsReset/create",
   restartConnector: "/connector/restart",
   getConnectorsToManage: "/getConnectorsToManage",
   resetCacheClusterApi: "/schemas/resetCache",
