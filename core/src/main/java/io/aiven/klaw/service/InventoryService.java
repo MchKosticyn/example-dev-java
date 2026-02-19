@@ -6,7 +6,7 @@ import java.util.Map;
 public final class InventoryService {
   private final Map<String, Integer> stock = new HashMap<>();
 
-  public boolean reserve(String sku, int qty) {
+  public synchronized boolean reserve(String sku, int qty) {
     Integer available = stock.get(sku);
     if (available == null || available < qty) {
       return false;
@@ -24,3 +24,4 @@ public final class InventoryService {
     return stock.getOrDefault(sku, 0);
   }
 }
+
