@@ -38,7 +38,7 @@ class InventoryServiceTest {
     start.countDown();
     pool.shutdown();
     pool.awaitTermination(2, TimeUnit.SECONDS);
-    int remaining = service.available(sku);
+    int remaining = service.availableStock(sku);
     assertTrue((reversed1.get() ^ reversed2.get()) && remaining == 0);
   }
 }

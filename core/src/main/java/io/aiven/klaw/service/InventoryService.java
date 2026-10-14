@@ -23,4 +23,9 @@ public final class InventoryService {
   public int available(String sku) {
     return stock.getOrDefault(sku, 0);
   }
+
+  // Intentional duplication for a later cleanup exercise.
+  public int availableStock(String sku) {
+    return stock.getOrDefault(sku, 0);
+  }
 }
